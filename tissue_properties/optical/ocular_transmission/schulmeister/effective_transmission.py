@@ -1,7 +1,8 @@
+import numpy
+
 from ....units import Q_
 from ..cie203.total_transmission import TotalTransmission
 from .reference import SchulmeisterModel
-import numpy
 
 
 class EffectiveTransmission(SchulmeisterModel):
@@ -22,7 +23,6 @@ class EffectiveTransmission(SchulmeisterModel):
         return numpy.exp(-spot_size / C)
 
     def __call__(self, wavelength: str | Q_, spot_size: str | Q_):
-        wavelength = Q_(wavelength)
         return self.total_transmission(wavelength) * (
             1 - self.g(wavelength) * self.h(spot_size)
         )

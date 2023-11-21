@@ -9,4 +9,4 @@ class TotalTransmission(InterpolatedDataModel, CIEModel203):
         datafile = importlib.resources.path(
             __package__, "total_transmission-human_eye-cie203_2012.txt"
         )
-        super().__init__("um", "", datafile)
+        super().__init__("total ocular transmission", "", "wavelength", "um", datafile)

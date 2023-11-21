@@ -1,6 +1,7 @@
 import pytest
 
 from tissue_properties.base_classes import *
+from tissue_properties.exceptions import UndefinedProperty
 from tissue_properties.optical.absorption_coefficient import (mainster,
                                                               schulmeister)
 from tissue_properties.units import *
@@ -46,3 +47,11 @@ def test_function_call_does_not_modify_arg():
 
     assert rpe(wavelength).magnitude == pytest.approx(1.032218944384028646e03)
     assert wavelength.magnitude == pytest.approx(0.429)
+
+
+def test_outof_range_errors():
+    rpe = mainster.RPE()
+    choroid = mainster.Choroid()
+
+    with pytest.raises(UndefinedProperty):
+        rpe("1400 nm")
