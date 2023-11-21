@@ -1,5 +1,6 @@
 import pytest
-from tissue_properties.data_models import *
+
+from tissue_properties.base_classes import *
 from tissue_properties.optical.absorption_coefficient import (mainster,
                                                               schulmeister)
 from tissue_properties.units import *

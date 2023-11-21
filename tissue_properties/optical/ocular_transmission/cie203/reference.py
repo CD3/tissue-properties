@@ -1,4 +1,4 @@
-from ....data_models import ReferencedDataModel
+from ....base_classes import ReferencedDataModel
 
 
 class CIEModel203(ReferencedDataModel):

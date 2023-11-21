@@ -1,6 +1,6 @@
 import importlib.resources
 
-from ....data_models import InterpolatedDataModel
+from ....base_classes import InterpolatedDataModel
 from .reference import CIEModel203
 
 
