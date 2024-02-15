@@ -79,12 +79,6 @@ def alpha_4(l: Q_) -> Q_:
 
 
 def n(n_double_star: Q_, n_F: Q_, n_c: Q_, n_star: Q_, l: Q_) -> Q_:
-    print(l)
-    print(n_double_star, n_F, n_c, n_star)
-    print(alpha_1(l))
-    print(alpha_2(l))
-    print(alpha_3(l))
-    print(alpha_4(l))
     return (
         alpha_1(l) * n_double_star
         + alpha_2(l) * n_F
