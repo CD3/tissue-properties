@@ -7,10 +7,10 @@ from .reference import MainsterModel
 
 class Transmission(InterpolatedDataModel, MainsterModel):
     def __init__(self):
-        datafile = importlib.resources.path(
+        with importlib.resources.path(
             __package__, "transmission-human_eye-mainster.txt"
-        )
-        super().__init__("ocular transmission", "", "wavelength", "nm", datafile)
+            ) as datafile:
+            super().__init__("ocular transmission", "", "wavelength", "nm", datafile)
 
     # We are overriding the call operator so that we can name the argument
     # The CLI uses the inspect module to find all of the models we have implemented

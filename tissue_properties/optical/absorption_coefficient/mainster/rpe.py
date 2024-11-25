@@ -7,8 +7,10 @@ from .reference import MainsterModel
 
 class RPE(InterpolatedDataModel, MainsterModel):
     def __init__(self):
-        datafile = importlib.resources.path(__package__, "mua-mainster-rpe.txt")
-        super().__init__("absorption coefficient", "1/cm", "wavelength", "nm", datafile)
+        with importlib.resources.path(__package__, "mua-mainster-rpe.txt") as datafile:
+            super().__init__(
+                "absorption coefficient", "1/cm", "wavelength", "nm", datafile
+            )
 
     # We are overriding the call operator so that we can name the argument
     # The CLI uses the inspect module to find all of the models we have implemented
