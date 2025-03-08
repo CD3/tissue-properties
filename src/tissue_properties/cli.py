@@ -40,7 +40,8 @@ def get_module_name_from_file_path(filepath):
 
 
 def get_file_path_from_module_name(modulename):
-    return modulename.replace(".", "/") + ".py"
+    root = pathlib.Path(tissue_properties.__path__[0]).absolute().parent
+    return root / (modulename.replace(".", "/") + ".py")
 
 
 def get_list_of_models():
