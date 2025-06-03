@@ -1,6 +1,6 @@
 [project]
 name = "tissue-properties"
-version = "0.2.2"
+version = "0.3.0"
 description = "A python library for computing/looking up various tissue properties used in laser bioeffect models."
 authors = [
     { name = "CD Clark III", email = "clifton.clark@gmail.com" }
