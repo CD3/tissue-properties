@@ -23,6 +23,9 @@ class EffectiveTransmission(SchulmeisterModel):
         return numpy.exp(-spot_size / C)
 
     def __call__(self, wavelength: str | Q_, spot_size: str | Q_):
+        """
+        Note: spot size is 1/e retinal spot size
+        """
         return self.total_transmission(wavelength) * (
             1 - self.g(wavelength) * self.h(spot_size)
         )
