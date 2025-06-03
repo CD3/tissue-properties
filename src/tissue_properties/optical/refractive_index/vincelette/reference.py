@@ -12,7 +12,6 @@ class VinceletteModel(ReferencedDataModel):
   pages         = {054005},
   url           = {https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-13/issue-05/054005/Thermal-lensing-in-ocular-media-exposed-to-continuous-wave-near/10.1117/1.2978066.full?SSO=1}
 }
-}
 """
 
     def __init__(self):
