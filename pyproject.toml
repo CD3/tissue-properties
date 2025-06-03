@@ -31,3 +31,8 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/tissue_properties"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+]
