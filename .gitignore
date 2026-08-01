@@ -1,5 +1,3 @@
 __pycache__/
 dist
-requirements-dev.lock
-requirements.lock
-.python-version
+.venv
