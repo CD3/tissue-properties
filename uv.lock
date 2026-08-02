@@ -294,7 +294,7 @@ wheels = [
 
 [[package]]
 name = "tissue-properties"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "." }
 dependencies = [
     { name = "numpy" },
@@ -311,7 +311,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "numpy", specifier = ">=2.0" },
+    { name = "numpy", specifier = ">=2" },
     { name = "pint", specifier = ">=0.24.4" },
     { name = "scipy", specifier = ">=1.14.1" },
     { name = "thefuzz", specifier = ">=0.22.1" },
@@ -319,7 +319,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.4.0" }]
+dev = [{ name = "pytest", specifier = ">=8.4" }]
 
 [[package]]
 name = "typer"
