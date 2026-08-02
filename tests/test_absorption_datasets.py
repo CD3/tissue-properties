@@ -3,7 +3,7 @@ import pytest
 from tissue_properties.base_classes import *
 from tissue_properties.exceptions import UndefinedProperty
 from tissue_properties.optical.absorption_coefficient import (mainster,
-                                                              schulmeister)
+                                                              schulmeister,cie203)
 from tissue_properties.units import *
 
 
@@ -55,3 +55,34 @@ def test_outof_range_errors():
 
     with pytest.raises(UndefinedProperty):
         rpe("1400 nm")
+
+def test_cie_data():
+    water = cie203.Water()
+
+    assert water("400 nm").magnitude == pytest.approx(0.00336)
+    assert water("500 nm").magnitude == pytest.approx(0.00183)
+    assert water("600 nm").magnitude == pytest.approx(0.00431)
+
+    cornea = cie203.Cornea()
+
+    assert cornea("400 nm").magnitude == pytest.approx(3.9336)
+    assert cornea("500 nm").magnitude == pytest.approx(1.894)
+    assert cornea("600 nm").magnitude == pytest.approx(1.2424)
+
+    lens= cie203.Lens()
+
+    assert lens("400 nm").magnitude == pytest.approx(9.4205)
+    assert lens("500 nm").magnitude == pytest.approx(0.2141)
+    assert lens("600 nm").magnitude == pytest.approx(0.1446)
+
+    aqueous = cie203.Aqueous()
+
+    assert aqueous("400 nm").magnitude == pytest.approx(0.078)
+    assert aqueous("500 nm").magnitude == pytest.approx(0.04)
+    assert aqueous("600 nm").magnitude == pytest.approx(0.035)
+
+    vitreous = cie203.Vitreous()
+
+    assert vitreous("400 nm").magnitude == pytest.approx(0.078)
+    assert vitreous("500 nm").magnitude == pytest.approx(0.04)
+    assert vitreous("600 nm").magnitude == pytest.approx(0.035)
